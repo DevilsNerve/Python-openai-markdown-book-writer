@@ -33,5 +33,9 @@ def write_book(title, theme, num_chapters=10, words_per_chapter=1000):
             
             book.write(chapter_content + '\n\n')
 
+# Prompt the user for input
+title = input("Enter the title of the book: ")
+theme = input("Enter the theme of the book: ")
+
 # Usage
-# write_book("My AI Generated Book", "The Future of Technology", num_chapters=5, words_per_chapter=2000)
+write_book(title, theme, num_chapters=5, words_per_chapter=2000)
