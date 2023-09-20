@@ -1,4 +1,3 @@
-```
 # OpenAI Markdown Book Writer
 
 OpenAI Markdown Book Writer is a Python utility for generating books in Markdown format using the power of the OpenAI GPT API.
