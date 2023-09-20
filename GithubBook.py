@@ -4,14 +4,24 @@ import time
 # 1. Set up OpenAI credentials
 openai.api_key = 'YOUR_OPENAI_API_KEY'
 
-def write_book(title, theme, num_chapters=10, words_per_chapter=1000):
+def write_book(title, theme, num_chapters, words_per_chapter):
+    """
+    Function to write a book using OpenAI API.
+    
+    Parameters:
+    - title (str): Title of the book.
+    - theme (str): Theme of the book.
+    - num_chapters (int): Number of chapters in the book.
+    - words_per_chapter (int): Number of words per chapter.
+    """
+    
     # Create a file to save the content in Markdown format
     with open(f"{title}.md", "w") as book:
-        # Title of the book
+        # Write the title of the book
         book.write(f"# {title}\n\n")
         
         for chapter_num in range(1, num_chapters + 1):
-            # Chapter title in Markdown
+            # Define the chapter title in Markdown
             chapter_title = f"## Chapter {chapter_num}: {theme} - Part {chapter_num}"
             book.write(chapter_title + '\n\n')
             
@@ -36,6 +46,8 @@ def write_book(title, theme, num_chapters=10, words_per_chapter=1000):
 # Prompt the user for input
 title = input("Enter the title of the book: ")
 theme = input("Enter the theme of the book: ")
+num_chapters = int(input("Enter the number of chapters you want in the book: "))
+words_per_chapter = int(input("Enter the number of words per chapter: "))
 
-# Usage
-write_book(title, theme, num_chapters=5, words_per_chapter=2000)
+# Call the function
+write_book(title, theme, num_chapters, words_per_chapter)
